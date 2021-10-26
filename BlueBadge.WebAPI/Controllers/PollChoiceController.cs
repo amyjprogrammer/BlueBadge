@@ -1,4 +1,5 @@
 ﻿using BlueBadge.Data;
+using BlueBadge.Models;
 using BlueBadge.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -13,11 +14,24 @@ namespace BlueBadge.WebAPI.Controllers
     [Authorize]
     public class PollChoiceController : ApiController
     {
-/*        private PollChoice CreatePollChoiceService()
+        public IHttpActionResult Get()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var pollChoiceService = new PollChoiceService(userId);
-            return pollChoiceService;
-        }*/
+            var pollService = new PollChoiceService();
+            var pollChoices = pollService.GetPollChoice();
+            return Ok(pollChoices);
+        }
+
+        public IHttpActionResult Post(PollChoiceCreate pollChoice)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            var service = new PollChoiceService();
+
+            if (!service.CreatePollChoice(pollChoice))
+                return InternalServerError();
+
+            return Ok();
+           
+        }
     }
 }
