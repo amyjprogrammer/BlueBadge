@@ -11,11 +11,7 @@ namespace BlueBadge.Services
     public class PollChoiceService
     {
         private readonly Guid _userId;
-        public PollChoiceService(Guid userId)
-        {
-            _userId = userId;
-        }
-
+ 
         public bool CreatePollChoice(PollChoiceCreate model)
         {
             var entity =
@@ -29,6 +25,26 @@ namespace BlueBadge.Services
             {
                 ctx.PollChoices.Add(entity);
                 return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public IEnumerable<PollChoiceListItem> GetPollChoice()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx.
+                    PollChoices.Select
+                    (e =>
+                           new PollChoiceListItem
+                           {
+                               PollId = e.PollId,
+                               QuestionId = e.QuestionId,
+                               Choices = e.Choices
+                           }
+
+                        );
+                return query.ToArray();
             }
         }
     }

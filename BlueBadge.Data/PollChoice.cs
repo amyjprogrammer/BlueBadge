@@ -15,6 +15,7 @@ namespace BlueBadge.Data
         
         [ForeignKey(nameof(Question))]
         public int QuestionId { get; set; }
+        public virtual Question Question { get; set; } 
         public List<PollChoice> Choices { get; set; }
     }
 }
