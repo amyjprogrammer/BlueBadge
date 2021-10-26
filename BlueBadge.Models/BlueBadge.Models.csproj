@@ -54,6 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PollChoiceCreate.cs" />
+    <Compile Include="PollChoiceDetail.cs" />
+    <Compile Include="PollChoiceEdit.cs" />
+    <Compile Include="PollChoiceListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionCreate.cs" />
     <Compile Include="QuestionDetail.cs" />
@@ -63,6 +67,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlueBadge.Data\BlueBadge.Data.csproj">
+      <Project>{9C9EC63D-A872-4D4F-9425-CE4512F8263A}</Project>
+      <Name>BlueBadge.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
