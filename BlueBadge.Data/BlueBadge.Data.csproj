@@ -94,6 +94,7 @@
       <DependentUpon>202110260200390_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PollChoice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.cs" />
   </ItemGroup>
