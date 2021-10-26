@@ -56,5 +56,54 @@ namespace BlueBadge.Services
                 return query.ToArray();
             }
         }
+        public QuestionDetail GetQuestionById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Questions
+                        .Single(e => e.QuestionId == id && e.CustomerId == _userId);
+                return
+                    new QuestionDetail
+                    {
+                        QuestionId = entity.QuestionId,
+                        Title = entity.Title,
+                        PollQuestion = entity.PollQuestion,
+                        CreatedUtc = entity.CreatedUtc,
+                        ModifiedUtc = entity.ModifiedUtc
+                    };
+            }
+        }
+
+        public bool UpdateQuestion(QuestionEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Questions
+                        .Single(e => e.QuestionId == model.QuestionId && e.CustomerId == _userId);
+                entity.Title = model.Title;
+                entity.PollQuestion = model.Title;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteQuestion(int questionId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Questions
+                        .Single(e => e.QuestionId == questionId && e.CustomerId == _userId);
+                ctx.Questions.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
