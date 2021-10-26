@@ -5,24 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlueBadge.Data
+namespace BlueBadge.Models
 {
-    public class Question
+    public class QuestionListItem
     {
-        [Key]
+        [Display(Name ="Question Number")]
         public int QuestionId { get; set; }
-
-        [Required]
-        public Guid CustomerId { get; set; }
 
         public string Title { get; set; }
 
-        [Required]
+        [Display(Name ="Question")]
         public string PollQuestion { get; set; }
 
-        [Required]
+        [Display(Name ="Created")]
         public DateTimeOffset CreatedUtc { get; set; }
-
-        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }
