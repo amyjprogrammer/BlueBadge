@@ -33,10 +33,10 @@ namespace BlueBadge.Data
             return new ApplicationDbContext();
         }
 
-        /*public DbSet<Email> Emails { get; set; }
+        //public DbSet<Email> Emails { get; set; }
         public DbSet<Question> Questions { get; set; }
-        public DbSet<PollChoice> PollChoices { get; set; }
-        public DbSet<Response> Responses { get; set; }*/
+        //public DbSet<PollChoice> PollChoices { get; set; }
+        //public DbSet<Response> Responses { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
