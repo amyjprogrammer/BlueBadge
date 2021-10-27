@@ -12,6 +12,6 @@ namespace BlueBadge.Models
         public int PollId { get; set; }
 
         
-        public List<PollChoice> Choices { get; set; }
+        public string Choice { get; set; }
     }
 }

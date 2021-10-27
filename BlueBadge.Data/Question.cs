@@ -12,7 +12,7 @@ namespace BlueBadge.Data
         [Key]
         public int QuestionId { get; set; }
 
-        [Required]
+        [Required] // Gerald The Bouncer //
         public Guid CustomerId { get; set; }
 
         public string Title { get; set; }

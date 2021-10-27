@@ -17,6 +17,6 @@ namespace BlueBadge.Models
         public int QuestionId { get; set; }
 
         [Display(Name = "Question Choices")]
-        public List<PollChoice> Choices { get; set; }
+        public string Choice { get; set; }
     }
 }
