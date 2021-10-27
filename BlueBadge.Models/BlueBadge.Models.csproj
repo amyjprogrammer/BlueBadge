@@ -67,6 +67,8 @@
     <Compile Include="QuestionDetail.cs" />
     <Compile Include="QuestionEdit.cs" />
     <Compile Include="QuestionListItem.cs" />
+    <Compile Include="ResponseCreate.cs" />
+    <Compile Include="ResponseDetail.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
