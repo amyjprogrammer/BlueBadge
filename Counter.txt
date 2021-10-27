@@ -1,0 +1,88 @@
+Ideas for the Counter
+
+having a counter for each poll choice
+- counter starts at zero (int onecounter = 0 and int secondCounter = 0)
+
+should also have a percentage for the counts	
+	-will need the total of all the counters like sum of the counters(super simple yes or no would be int total = yesCounter + noCounter)
+	- var yesPercent = (double)yesCounter / total * 100;
+	- var noPercent = (double)noCounter / total * 100;//could also use noCounter * 100.0 / total;
+
+	var yesPercentage = Math.Round(yesPercent, 2);- rounds the number to two decimal points
+
+the entire thing can be var yesPercent = Math.Round(yesCounter * 100.0 / total, 2 )--I really like that shorter
+
+Rounding up the percent will provide not completely accurate numbers (Do we care about that?)
+	- if yes
+		-show the off amount with var offPercent = Math.Rount(100-yesPercent-noPercent-etc, 2)- rounds to 2 again
+
+Use ctrl + h- refactor code (I really need to remember this one!)
+
+For Results
+	public class Counter 
+	{ 
+		public Counter (string pollChoice, int count)
+		{
+			PollChoice = pollChoice; //could run into issues, maybe PollChoice.Name?
+			Count = count;
+		}
+
+		public List<PollChoice> PollChoices { get; set;} (basically the name of the choice)
+		public int Count {get; set;}
+
+		public double GetPercent(int total)
+		{
+			return Math.Round(Count * 100.0 / total, 2)
+			//lines before var yes = new Counter("Yes", 4); int total = yes.Count + no.Count + whatever add'l counts
+			//how to use later  var yesPercent = yes.GetPercent(total); 
+		}
+	}
+
+	public class CounterManager
+	{
+		//constructor
+		public CounterManager(List<Counter> counters)//actually use (params Counter[] counters)
+		{
+			Counters = counters;//handling the issue for params use Counters = new List<Counter> (counters);
+		}
+		//allows you to write var manager much easier
+		//var manager = new CounterManager(yes, no, maybe);
+	
+		public List<Counter> Counters {get; set;} //gets all the choices
+
+		//how to use this
+		//var manager = new CounterManager(new List<Counter> {yes, no, maybe, etc});
+
+		public int Total()
+		{
+			return Counters.Sum(x => x.Count); //the function is the same as public int Selector(Counter counter){ return counter.Count};
+			//the above is the same as writing int total = 0; foreach(var c in Counters){ total += c.Count;} return total;
+		}
+
+		//to make above can be even shorter
+		public int Total () => Counters.Sum(x => x.Count);
+	}
+	//var manager = new CounterManager(yes, no, maybe);
+	//using Total- var yesPercent = yes.GetPercent(manager.Total());
+
+	to display each percent
+	foreach(var c in Counters)
+	{
+		Console.WriteLine(${c.PollChoice} Counts: {c.Count}, Percentage: {c.GetPercent(Total())});
+	}
+
+
+	--Do we care to annouce a winner- right now No (stretch goal?)
+		var highestNumOfVotes = Counters.Max(x => x.Count);
+		var winners = Counters.Where(x => x.Count == highestNumOfVotes).ToList();//will be cast as an IEnunumerable- could be more than one if multiple have the same num of votes
+
+		if (winners.Count == 1)
+		{
+			var winner = winners[0];//first one in the list above can also write it as winners.First();
+			Console.WriteLine($"{winner.PollChoice//maybe.Name} Won!")
+		}
+		else (winners.Count == Counters.Count)//used if they all have the same number of votes or two draw
+		{
+			String.Join(" -Draw- ", winners.Select(x => x.PollChoice));
+		}
+		
