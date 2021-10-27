@@ -1,4 +1,5 @@
-﻿using BlueBadge.Services;
+﻿using BlueBadge.Models;
+using BlueBadge.Services;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,17 @@ namespace BlueBadge.WebAPI.Controllers
 {
     public class ResponseController : ApiController
     {
+        /*public IHttpActionResult Post(ResponseCreate response)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateResponseService();
+
+            if (!service.CreateResponse(response))
+                return InternalServerError();
+        }*/
+
         private ResponseService CreateResponseService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

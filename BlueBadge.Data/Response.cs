@@ -15,10 +15,11 @@ namespace BlueBadge.Data
 
         [ForeignKey(nameof(Question))]
         public int QuestionId { get; set; }
+        public virtual Question Question { get; set; }
 
-        //[ForeignKey(nameof(PollChoice))]
+        [ForeignKey(nameof(PollChoice))]
         public int PollId { get; set; }
-
+        public virtual PollChoice PollChoice { get; set; }
 
     }
 }
