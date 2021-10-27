@@ -10,15 +10,15 @@ namespace BlueBadge.Services
 {
     public class PollChoiceService
     {
-        private readonly Guid _userId;
- 
+        /*        private readonly Guid _userId;*/
+
         public bool CreatePollChoice(PollChoiceCreate model)
         {
             var entity =
                 new PollChoice()
                 {
                     QuestionId = model.QuestionId,
-                    Choices = model.Choices,
+                    Choice = model.Choice,
 
                 };
             using (var ctx = new ApplicationDbContext())
@@ -40,12 +40,50 @@ namespace BlueBadge.Services
                            {
                                PollId = e.PollId,
                                QuestionId = e.QuestionId,
-                               Choices = e.Choices
+                               Choice = e.Choice
                            }
 
                         );
-                return query.ToArray();
+                return query.ToList();
+            }
+        }
+
+        public bool UpdatePollChoice(PollChoiceEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx.
+                    PollChoices.
+                    Single(e => e.QuestionId == model.QuestionId);
+                entity.Choice = model.Choice;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+
+
+
+        public PollChoiceDetail GetPollChoiceById(int Id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx.
+                    PollChoices.
+                    Single(e => e.PollId == Id);
+                return
+                    new PollChoiceDetail
+                    {
+                        PollId = entity.PollId,
+                        Choice = entity.Choice,
+                    };
             }
         }
     }
 }
+
+
+
+
