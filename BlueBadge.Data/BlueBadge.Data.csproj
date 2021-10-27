@@ -94,7 +94,12 @@
     <Compile Include="Migrations\202110260200390_initial.Designer.cs">
       <DependentUpon>202110260200390_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110261853261_PollChoice.cs" />
+    <Compile Include="Migrations\202110261853261_PollChoice.Designer.cs">
+      <DependentUpon>202110261853261_PollChoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PollChoice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.cs" />
   </ItemGroup>
@@ -108,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110260200390_initial.resx">
       <DependentUpon>202110260200390_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110261853261_PollChoice.resx">
+      <DependentUpon>202110261853261_PollChoice.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

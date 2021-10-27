@@ -58,8 +58,14 @@
     <Compile Include="EmailDetail.cs" />
     <Compile Include="EmailEdit.cs" />
     <Compile Include="EmailListItem.cs" />
+    <Compile Include="PollChoiceCreate.cs" />
+    <Compile Include="PollChoiceDetail.cs" />
+    <Compile Include="PollChoiceEdit.cs" />
+    <Compile Include="PollChoiceListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionCreate.cs" />
+    <Compile Include="QuestionDetail.cs" />
+    <Compile Include="QuestionEdit.cs" />
     <Compile Include="QuestionListItem.cs" />
   </ItemGroup>
   <ItemGroup>
