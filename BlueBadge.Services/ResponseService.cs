@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BlueBadge.Data;
+using BlueBadge.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,16 @@ namespace BlueBadge.Services
             _userId = userId;
         }
 
+        /*public bool CreateResponse(ResponseCreate model)
+        {
+            var entity = new Response()
+            {
 
+            };
+            using (var ctx = new ApplicationDbContext())
+            {
+
+            }
+        }*/
     }
 }
