@@ -13,6 +13,6 @@ namespace BlueBadge.Models
         public Guid CustomerId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public List<Email> Emails { get; set; }
+        public string EmailAddress { get; set; }
     }
 }
