@@ -16,13 +16,13 @@ namespace BlueBadge.Data
         [Required]
         public string GroupName { get; set; }
 
-        [ForeignKey(nameof(Question))]
+        [ForeignKey(nameof(Question))]//creates one to many relationship
         public int? QuestionId { get; set; }
         public virtual Question Question { get; set; }
 
         public List<Question> Questions = new List<Question>();
 
-        [ForeignKey(nameof(Email))]
+        [ForeignKey(nameof(Email))]//creates one to many relationship
         public int? EmailId { get; set; }
         public virtual Email Email { get; set; }
 

@@ -54,21 +54,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmailCreate.cs" />
-    <Compile Include="EmailDetail.cs" />
-    <Compile Include="EmailEdit.cs" />
-    <Compile Include="EmailListItem.cs" />
-    <Compile Include="PollChoiceCreate.cs" />
-    <Compile Include="PollChoiceDetail.cs" />
-    <Compile Include="PollChoiceEdit.cs" />
-    <Compile Include="PollChoiceListItem.cs" />
+    <Compile Include="Email.Models\EmailCreate.cs" />
+    <Compile Include="Email.Models\EmailDetail.cs" />
+    <Compile Include="Email.Models\EmailEdit.cs" />
+    <Compile Include="Email.Models\EmailListItem.cs" />
+    <Compile Include="PollChoice\PollChoiceCreate.cs" />
+    <Compile Include="PollChoice\PollChoiceDetail.cs" />
+    <Compile Include="PollChoice\PollChoiceEdit.cs" />
+    <Compile Include="PollChoice\PollChoiceListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuestionCreate.cs" />
-    <Compile Include="QuestionDetail.cs" />
-    <Compile Include="QuestionEdit.cs" />
-    <Compile Include="QuestionListItem.cs" />
-    <Compile Include="ResponseCreate.cs" />
-    <Compile Include="ResponseDetail.cs" />
+    <Compile Include="Question.Models\QuestionCreate.cs" />
+    <Compile Include="Question.Models\QuestionDetail.cs" />
+    <Compile Include="Question.Models\QuestionEdit.cs" />
+    <Compile Include="Question.Models\QuestionListItem.cs" />
+    <Compile Include="Response.Models\ResponseCreate.cs" />
+    <Compile Include="Response.Models\ResponseDetail.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -80,5 +80,6 @@
       <Name>BlueBadge.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
