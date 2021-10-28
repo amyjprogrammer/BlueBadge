@@ -60,6 +60,7 @@
     <Compile Include="Email.Models\EmailListItem.cs" />
     <Compile Include="Group.Models\GroupCreate.cs" />
     <Compile Include="Group.Models\GroupDetail.cs" />
+    <Compile Include="Group.Models\GroupEdit.cs" />
     <Compile Include="Group.Models\GroupListItem.cs" />
     <Compile Include="PollChoice\PollChoiceCreate.cs" />
     <Compile Include="PollChoice\PollChoiceDetail.cs" />
