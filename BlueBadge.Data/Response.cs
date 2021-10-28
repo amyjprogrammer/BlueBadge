@@ -13,22 +13,9 @@ namespace BlueBadge.Data
         [Key]
         public int ResponseId { get; set; }
 
-        [ForeignKey(nameof(Question))]
-        public int? QuestionId { get; set; }
-        public virtual Question Question { get; set; }
-
         [ForeignKey(nameof(PollChoice))]
         public int PollId { get; set; }
         public virtual PollChoice PollChoice { get; set; }
-
-        /*protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder
-                .Entity<Question>()
-                .HasOne(e => e.Customer)
-                .WithOne(e => e.PollChoice)
-                .OnDelete(DeleteBehavior.ClientCascade);
-        }*/
 
     }
 }
