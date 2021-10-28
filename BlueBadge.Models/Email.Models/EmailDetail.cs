@@ -1,6 +1,7 @@
 ﻿using BlueBadge.Data;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,10 +10,13 @@ namespace BlueBadge.Models
 {
     public class EmailDetail
     {
+        [Display(Name="Email Id")]
         public int EmailId { get; set; }
-        public Guid CustomerId { get; set; }
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
+        [Display(Name = "Email Address")]
         public string EmailAddress { get; set; }
     }
 }

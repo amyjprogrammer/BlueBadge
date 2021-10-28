@@ -23,7 +23,6 @@ namespace BlueBadge.Services
             var entity = new Email()
             {
                 CustomerId = _userId,
-                EmailId = model.EmailId,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 EmailAddress = model.EmailAddress
@@ -49,7 +48,8 @@ namespace BlueBadge.Services
                             {
                                 FirstName = e.FirstName,
                                 LastName = e.LastName,
-                                EmailId = e.EmailId
+                                EmailId = e.EmailId,
+                                EmailAddress = e.EmailAddress
                             }
                         );
                 return query.ToArray();
@@ -67,7 +67,6 @@ namespace BlueBadge.Services
                 return
                     new EmailDetail
                     {
-                        CustomerId = entity.CustomerId,
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,
                         EmailAddress = entity.EmailAddress,
@@ -84,7 +83,6 @@ namespace BlueBadge.Services
                         .Emails         //Finding them                  //Access?
                         .Single(e => e.EmailId == model.EmailId && e.CustomerId == _userId);
 
-                entity.EmailId = model.EmailId;
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
                 entity.EmailAddress = model.EmailAddress;
