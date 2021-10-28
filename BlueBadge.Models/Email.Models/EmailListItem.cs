@@ -12,6 +12,6 @@ namespace BlueBadge.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int EmailId { get; set; }
-        public List<Email> Emails { get; set; }
+        public string EmailAddress { get; set; }
     }
 }
