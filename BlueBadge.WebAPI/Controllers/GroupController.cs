@@ -40,6 +40,29 @@ namespace BlueBadge.WebAPI.Controllers
             return Ok(group);
         }
 
+        public IHttpActionResult Put(GroupEdit group)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var service = CreateGroupService();
+
+            if (!service.UpdateGroup(group))
+                return InternalServerError();
+
+            return Ok();
+        }
+
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateGroupService();
+
+            if (!service.DeleteGroup(id))
+                return InternalServerError();
+
+            return Ok();
+        }
+
         private GroupService CreateGroupService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

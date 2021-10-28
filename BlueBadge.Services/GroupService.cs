@@ -69,5 +69,35 @@ namespace BlueBadge.Services
                     };
             }
         }
+
+        public bool UpdateGroup(GroupEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Groups
+                        .Single(e => e.GroupId == model.GroupId && e.CustomerId == _userId);
+
+                entity.GroupName = model.GroupName;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteGroup(int groupId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Groups
+                        .Single(e => e.GroupId == groupId && e.CustomerId == _userId);
+
+                ctx.Groups.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
