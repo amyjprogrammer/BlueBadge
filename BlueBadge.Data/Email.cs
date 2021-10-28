@@ -45,6 +45,5 @@ namespace BlueBadge.Data
         }
 
         public string EmailAddress { get; set; }
-
     }
 }

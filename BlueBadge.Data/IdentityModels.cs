@@ -37,6 +37,7 @@ namespace BlueBadge.Data
         public DbSet<Question> Questions { get; set; }
         public DbSet<PollChoice> PollChoices { get; set; }
         public DbSet<Response> Responses { get; set; }
+        public DbSet<Group> Groups { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
