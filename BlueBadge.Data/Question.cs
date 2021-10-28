@@ -17,7 +17,7 @@ namespace BlueBadge.Data
 
         public string Title { get; set; }
 
-        public virtual List<PollChoice> Choices { get; set; } = new List<PollChoice>();
+        public virtual List<PollChoice> Choices { get; set; } = new List<PollChoice>();//added virtual
 
         [Required]
         public string PollQuestion { get; set; }
