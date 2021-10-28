@@ -69,7 +69,7 @@ namespace BlueBadge.Services
                         CustomerId = entity.CustomerId,
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,
-                        Emails = entity.Emails,
+                        EmailAddress = entity.EmailAddress,
                     };
             }
         }
