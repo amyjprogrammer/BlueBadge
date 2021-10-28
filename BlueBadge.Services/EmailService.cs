@@ -69,7 +69,7 @@ namespace BlueBadge.Services
                         CustomerId = entity.CustomerId,
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,
-                        Emails = entity.Emails,
+                        EmailAddress = entity.EmailAddress,
                     };
             }
         }
@@ -81,7 +81,7 @@ namespace BlueBadge.Services
                 var entity =
                     ctx
                         .Emails
-                        .Single(e => e.CustomerId == model.CustomerId && e.CustomerId == _userId);
+                        .Single(e => e.EmailId == model.EmailId && e.CustomerId == _userId);
 
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
