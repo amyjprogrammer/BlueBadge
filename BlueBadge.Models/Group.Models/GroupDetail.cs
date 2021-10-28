@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace BlueBadge.Models.Group.Models
 {
-    public class GroupListItem
+    public class GroupDetail
     {
-        [Display(Name = "Group Name")]
+        [Display(Name = "Group Number")]
+        public int GroupId { get; set; }
+
+        [Display(Name ="Group Name")]
         public string GroupName { get; set; }
 
         public List<Question> Questions = new List<Question>();
 
         public List<Email> Emails = new List<Email>();
-
-        [Display(Name = "Group Number")]
-        public int GroupId { get; set; }
     }
 }

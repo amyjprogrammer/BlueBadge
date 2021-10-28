@@ -33,6 +33,13 @@ namespace BlueBadge.WebAPI.Controllers
             return Ok();
         }
 
+        public IHttpActionResult Get(int id)
+        {
+            var groupService = CreateGroupService();
+            var group = groupService.GetGroupById(id);
+            return Ok(group);
+        }
+
         private GroupService CreateGroupService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
