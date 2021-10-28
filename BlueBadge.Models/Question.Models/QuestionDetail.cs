@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlueBadge.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -17,9 +18,15 @@ namespace BlueBadge.Models
         public string PollQuestion { get; set; }
 
         [Display(Name ="Created")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTimeOffset CreatedUtc { get; set; }
 
         [Display(Name ="Modified")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTimeOffset? ModifiedUtc { get; set; }
+
+        public virtual List<PollChoice> Choices { get; set; } = new List<PollChoice>();
     }
 }

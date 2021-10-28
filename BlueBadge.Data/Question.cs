@@ -12,12 +12,12 @@ namespace BlueBadge.Data
         [Key]
         public int QuestionId { get; set; }
 
-        [Required] // Gerald The Bouncer //
+        [Required] 
         public Guid CustomerId { get; set; }
 
         public string Title { get; set; }
 
-        public List<PollChoice> Choices = new List<PollChoice>();
+        public virtual List<PollChoice> Choices { get; set; } = new List<PollChoice>();
 
         [Required]
         public string PollQuestion { get; set; }
