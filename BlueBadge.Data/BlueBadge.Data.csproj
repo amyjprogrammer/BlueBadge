@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Email.cs" />
+    <Compile Include="Group.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202110260103597_InitialCreate.cs" />
     <Compile Include="Migrations\202110260103597_InitialCreate.Designer.cs">
@@ -105,6 +106,10 @@
     <Compile Include="Migrations\202110272013525_added some stuff.cs" />
     <Compile Include="Migrations\202110272013525_added some stuff.Designer.cs">
       <DependentUpon>202110272013525_added some stuff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110280338178_PollChoice1.cs" />
+    <Compile Include="Migrations\202110280338178_PollChoice1.Designer.cs">
+      <DependentUpon>202110280338178_PollChoice1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PollChoice.cs" />
@@ -131,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110272013525_added some stuff.resx">
       <DependentUpon>202110272013525_added some stuff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110280338178_PollChoice1.resx">
+      <DependentUpon>202110280338178_PollChoice1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
