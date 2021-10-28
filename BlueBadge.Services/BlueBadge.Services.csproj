@@ -54,8 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmailService.cs" />
+    <Compile Include="PollChoiceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionService.cs" />
+    <Compile Include="ResponseService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
