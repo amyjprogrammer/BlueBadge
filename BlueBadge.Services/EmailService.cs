@@ -25,7 +25,8 @@ namespace BlueBadge.Services
                 CustomerId = _userId,
                 EmailId = model.EmailId,
                 FirstName = model.FirstName,
-                LastName = model.LastName
+                LastName = model.LastName,
+                EmailAddress = model.EmailAddress
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -80,11 +81,13 @@ namespace BlueBadge.Services
             {
                 var entity =
                     ctx
-                        .Emails
+                        .Emails         //Finding them                  //Access?
                         .Single(e => e.EmailId == model.EmailId && e.CustomerId == _userId);
 
+                entity.EmailId = model.EmailId;
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
+                entity.EmailAddress = model.EmailAddress;
 
                 return ctx.SaveChanges() == 1;
             }

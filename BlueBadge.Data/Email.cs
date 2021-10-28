@@ -45,8 +45,5 @@ namespace BlueBadge.Data
         }
 
         public string EmailAddress { get; set; }
-        [Foreign]
-        public int GroupId { get; set; }
-
     }
 }
