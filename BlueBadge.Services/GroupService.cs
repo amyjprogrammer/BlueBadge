@@ -45,10 +45,28 @@ namespace BlueBadge.Services
                             e =>
                             new GroupListItem
                             {
+                                GroupId = e.GroupId,
                                 GroupName = e.GroupName //need to figure out how to display the info for questions and emails
                             }
                         );
                 return query.ToArray();
+            }
+        }
+
+        public GroupDetail GetGroupById(int groupId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Groups
+                        .Single(e => e.GroupId == groupId && e.CustomerId == _userId);
+                return
+                    new GroupDetail
+                    {
+                        GroupId = entity.GroupId,
+                        GroupName = entity.GroupName
+                    };
             }
         }
     }
