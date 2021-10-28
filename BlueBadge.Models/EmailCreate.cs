@@ -19,6 +19,7 @@ namespace BlueBadge.Models
         public string FirstName { get; set; }
         [MaxLength(100)]
         public string LastName { get; set; }
+        public string EmailAddress { get; set; }
 
     }
 }
