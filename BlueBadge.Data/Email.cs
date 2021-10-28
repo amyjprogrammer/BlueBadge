@@ -18,7 +18,6 @@ namespace BlueBadge.Data
         [Required]
         public Guid CustomerId { get; set; }
 
-        [Required]
         public string FirstName
         {
             get => _firstName;
@@ -31,7 +30,6 @@ namespace BlueBadge.Data
             }
         }
 
-        [Required]
         public string LastName
         {
             get => _lastName;
@@ -44,6 +42,7 @@ namespace BlueBadge.Data
             }
         }
 
+        [Required]
         public string EmailAddress { get; set; }
     }
 }

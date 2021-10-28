@@ -115,6 +115,10 @@
     <Compile Include="Migrations\202110281900114_Group.Designer.cs">
       <DependentUpon>202110281900114_Group.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110282023254_Email.cs" />
+    <Compile Include="Migrations\202110282023254_Email.Designer.cs">
+      <DependentUpon>202110282023254_Email.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PollChoice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -146,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110281900114_Group.resx">
       <DependentUpon>202110281900114_Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110282023254_Email.resx">
+      <DependentUpon>202110282023254_Email.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
