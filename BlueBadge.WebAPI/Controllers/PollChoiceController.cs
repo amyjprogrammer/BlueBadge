@@ -14,6 +14,7 @@ namespace BlueBadge.WebAPI.Controllers
     [Authorize]
     public class PollChoiceController : ApiController
     {
+        //Get All Poll Choice Controller
         public IHttpActionResult Get()
         {
             var pollService = new PollChoiceService();
@@ -21,6 +22,7 @@ namespace BlueBadge.WebAPI.Controllers
             return Ok(pollChoices);
         }
 
+        //Post Poll Choice Contoller
         public IHttpActionResult Post(PollChoiceCreate pollChoice)
         {
             if (!ModelState.IsValid)
@@ -33,5 +35,40 @@ namespace BlueBadge.WebAPI.Controllers
             return Ok();
            
         }
+
+        //Get Poll Choice By Id Contoller 
+        public IHttpActionResult Get(int id)
+        {
+            var pollService = new PollChoiceService();
+            var pollChoice = pollService.GetPollChoiceById(id);
+            return Ok(pollChoice);
+        }
+
+        //Put Poll Choice Contoller 
+        public IHttpActionResult Put(PollChoiceEdit pollChoice)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var service = new PollChoiceService();
+
+            if (!service.UpdatePollChoice(pollChoice))
+                return InternalServerError();
+
+            return Ok();
+        }
+
+        //Delete Poll Choice Controller 
+        public IHttpActionResult DeletePollChoice(int id)
+        {
+            var service = new PollChoiceService();
+
+            if (!service.DeletePollChoice(id))
+                return InternalServerError();
+
+            return Ok();
+        }
     }
 }
+
+

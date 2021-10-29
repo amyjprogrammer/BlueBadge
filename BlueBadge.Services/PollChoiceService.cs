@@ -10,8 +10,9 @@ namespace BlueBadge.Services
 {
     public class PollChoiceService
     {
-        /*        private readonly Guid _userId;*/
+     
 
+        //Create Poll Choice Service 
         public bool CreatePollChoice(PollChoiceCreate model)
         {
             var entity =
@@ -28,6 +29,8 @@ namespace BlueBadge.Services
             }
         }
 
+
+        //Get All Poll Choices Service
         public IEnumerable<PollChoiceListItem> GetPollChoice()
         {
             using (var ctx = new ApplicationDbContext())
@@ -48,23 +51,7 @@ namespace BlueBadge.Services
             }
         }
 
-        public bool UpdatePollChoice(PollChoiceEdit model)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity =
-                    ctx.
-                    PollChoices.
-                    Single(e => e.QuestionId == model.QuestionId);
-                entity.Choice = model.Choice;
-
-                return ctx.SaveChanges() == 1;
-            }
-        }
-
-
-
-
+        //Get Poll Choice By Id Service
         public PollChoiceDetail GetPollChoiceById(int Id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -82,12 +69,44 @@ namespace BlueBadge.Services
             }
         }
 
-/*        public bool UpdatePollChoice()
+        //Update Poll Choice Service
+        public bool UpdatePollChoice(PollChoiceEdit model)
         {
-            
-        }*/
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx.
+                    PollChoices.
+                    Single(e => e.QuestionId == model.QuestionId);
+                entity.Choice = model.Choice;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        //Delete Poll Choice Service
+        public bool DeletePollChoice(int pollId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .PollChoices
+                    .Single(e => e.PollId == pollId);
+                ctx.PollChoices.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+
+                    
+            }
+        }
     }
 }
+
+
+
+
+
 
 
 
