@@ -84,7 +84,7 @@ namespace BlueBadge.Services
                         .Single(e => e.EmailId == model.EmailId && e.CustomerId == _userId);
 
                 entity.FirstName = model.FirstName;
-                entity.LastName = model.LastName;
+                entity.LastName = model.LastName; 
                 entity.EmailAddress = model.EmailAddress;
 
                 return ctx.SaveChanges() == 1;
