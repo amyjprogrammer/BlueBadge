@@ -77,7 +77,7 @@ namespace BlueBadge.Services
                 var entity =
                     ctx.
                     PollChoices.
-                    Single(e => e.QuestionId == model.QuestionId);
+                    Single(e => e.QuestionId == model.QuestionId && e.PollId == model.PollId);
                 entity.Choice = model.Choice;
 
                 return ctx.SaveChanges() == 1;
