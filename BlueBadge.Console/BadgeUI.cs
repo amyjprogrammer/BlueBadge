@@ -8,6 +8,7 @@ namespace BlueBadge.Console
 {
     public class BadgeUI
     {
+        
         public void Run()
         {
             RunMenu();
@@ -15,7 +16,9 @@ namespace BlueBadge.Console
 
         private void RunMenu()
         {
+            bool isRunning = true;
 
+            
         }
     }
 }
