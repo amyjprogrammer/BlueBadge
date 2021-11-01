@@ -16,9 +16,12 @@ namespace BlueBadge.WebAPI.Controllers
     {
         public IHttpActionResult Get()
         {
-            var questionService = CreateQuestionService();
+            /*var questionService = CreateQuestionService();
             var questions = questionService.GetQuestions();
-            return Ok(questions);
+            return Ok(questions);*/
+
+            //refactoring
+            return Ok(CreateQuestionService().GetQuestions());
         }
 
         public IHttpActionResult Post(QuestionCreate question)
@@ -36,9 +39,12 @@ namespace BlueBadge.WebAPI.Controllers
 
         public IHttpActionResult Get(int id)
         {
-            var questionService = CreateQuestionService();
+            /*var questionService = CreateQuestionService();
             var question = questionService.GetQuestionById(id);
-            return Ok(question);
+            return Ok(question);*/
+
+            //refactoring
+            return Ok(CreateQuestionService().GetQuestionById(id));
         }
 
         public IHttpActionResult Put(QuestionEdit question)
@@ -66,8 +72,12 @@ namespace BlueBadge.WebAPI.Controllers
 
         private QuestionService CreateQuestionService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
+          /*  var userId = Guid.Parse(User.Identity.GetUserId());
             var questionService = new QuestionService(userId);
+            return questionService;*/
+
+            //refactoring
+            var questionService = new QuestionService(Guid.Parse(User.Identity.GetUserId()));
             return questionService;
         }
 
