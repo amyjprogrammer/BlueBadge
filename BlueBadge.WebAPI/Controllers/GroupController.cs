@@ -15,9 +15,12 @@ namespace BlueBadge.WebAPI.Controllers
     {
         public IHttpActionResult Get()
         {
-            var groupService = CreateGroupService();
+            /*var groupService = CreateGroupService();
             var groups = groupService.GetGroups();
-            return Ok(groups);
+            return Ok(groups);*/
+
+            //refactoring my code
+            return Ok(CreateGroupService().GetGroups());
         }
 
         public IHttpActionResult Post(GroupCreate group)
@@ -35,9 +38,11 @@ namespace BlueBadge.WebAPI.Controllers
 
         public IHttpActionResult Get(int id)
         {
-            var groupService = CreateGroupService();
+            /*var groupService = CreateGroupService();
             var group = groupService.GetGroupById(id);
-            return Ok(group);
+            return Ok(group);*/
+
+            return Ok(CreateGroupService().GetGroupById(id));
         }
 
         public IHttpActionResult Put(GroupEdit group)
@@ -65,8 +70,12 @@ namespace BlueBadge.WebAPI.Controllers
 
         private GroupService CreateGroupService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
+            /*var userId = Guid.Parse(User.Identity.GetUserId());
             var groupService = new GroupService(userId);
+            return groupService;*/
+
+            //refactoring
+            var groupService = new GroupService(Guid.Parse(User.Identity.GetUserId()));
             return groupService;
         }
 

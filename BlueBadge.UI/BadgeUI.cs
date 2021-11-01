@@ -24,7 +24,7 @@ namespace BlueBadge.UI
 
                 Console.WriteLine
                     (
-                        "Welcome to Poll Off\n" +
+                        "Welcome to Off the Poll\n" +
                         "****************************************************************\n\n" +
                         "1. Login\n" +
                         "2. Register\n" +
