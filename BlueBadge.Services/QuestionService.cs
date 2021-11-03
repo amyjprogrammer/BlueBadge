@@ -75,7 +75,7 @@ namespace BlueBadge.Services
                     };
                 foreach (var choice in entity.Choices)
                 {
-                    question.Choices.Add(new PollChoice { Choice = choice.Choice, PollId = choice.PollId});
+                    question.Choices.Add(new PollChoiceListItem { Choice = choice.Choice, PollId = choice.PollId, QuestionId = entity.QuestionId });
                 }
                 return question;
             }

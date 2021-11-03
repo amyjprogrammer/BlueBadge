@@ -27,7 +27,7 @@ namespace BlueBadge.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTimeOffset? ModifiedUtc { get; set; }
 
-        public virtual List<PollChoice> Choices { get; set; } = new List<PollChoice>();
+        public virtual List<PollChoiceListItem> Choices { get; set; } = new List<PollChoiceListItem>();
 
     }
 }
