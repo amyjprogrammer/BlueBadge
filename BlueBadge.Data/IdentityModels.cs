@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
@@ -19,6 +20,13 @@ namespace BlueBadge.Data
             // Add custom user claims here
             return userIdentity;
         }
+        [Required]
+        public string FirstName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
+
+        public string FullName { get { return $"{FirstName} {LastName}"; } }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

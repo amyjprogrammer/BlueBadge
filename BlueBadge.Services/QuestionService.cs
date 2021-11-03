@@ -50,7 +50,7 @@ namespace BlueBadge.Services
                                     QuestionId = e.QuestionId,
                                     Title = e.Title,
                                     PollQuestion = e.PollQuestion,
-                                    CreatedUtc = e.CreatedUtc,
+                                    CreatedUtc = e.CreatedUtc
                                 }
                         );
                 return query.ToArray();
@@ -64,8 +64,8 @@ namespace BlueBadge.Services
                     ctx
                         .Questions
                         .Single(e => e.QuestionId == id && e.CustomerId == _userId);
-                return
-                    new QuestionDetail
+                
+                var question = new QuestionDetail
                     {
                         QuestionId = entity.QuestionId,
                         Title = entity.Title,
@@ -73,6 +73,11 @@ namespace BlueBadge.Services
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc
                     };
+                foreach (var choice in entity.Choices)
+                {
+                    question.Choices.Add(new PollChoice { Choice = choice.Choice, PollId = choice.PollId});
+                }
+                return question;
             }
         }
 

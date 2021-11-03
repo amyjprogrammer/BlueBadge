@@ -119,6 +119,10 @@
     <Compile Include="Migrations\202110282023254_Email.Designer.cs">
       <DependentUpon>202110282023254_Email.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111022127570_FullName for User.cs" />
+    <Compile Include="Migrations\202111022127570_FullName for User.Designer.cs">
+      <DependentUpon>202111022127570_FullName for User.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PollChoice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -153,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110282023254_Email.resx">
       <DependentUpon>202110282023254_Email.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111022127570_FullName for User.resx">
+      <DependentUpon>202111022127570_FullName for User.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
