@@ -46,7 +46,7 @@ namespace BlueBadge.Services
                             new GroupListItem
                             {
                                 GroupId = e.GroupId,
-                                GroupName = e.GroupName //need to figure out how to display the info for questions and emails
+                                GroupName = e.GroupName 
                             }
                         );
                 return query.ToArray();
@@ -61,12 +61,23 @@ namespace BlueBadge.Services
                     ctx
                         .Groups
                         .Single(e => e.GroupId == groupId && e.CustomerId == _userId);
-                return
-                    new GroupDetail
+                
+                    var group = new GroupDetail
                     {
                         GroupId = entity.GroupId,
                         GroupName = entity.GroupName
                     };
+
+                foreach (var email in entity.Emails)
+                {
+                    group.Emails.Add(new Email { EmailId = email.EmailId, EmailAddress = email.EmailAddress});
+                }
+
+                foreach (var question in entity.Questions)
+                {
+                    group.Questions.Add(new Question { Title = question.Title, PollQuestion = question.PollQuestion, CreatedUtc = question.CreatedUtc, QuestionId = question.QuestionId });
+                }
+                return group;
             }
         }
 

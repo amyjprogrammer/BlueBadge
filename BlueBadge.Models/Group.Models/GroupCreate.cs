@@ -12,5 +12,6 @@ namespace BlueBadge.Models.Group.Models
         [Required]
         [MaxLength(50, ErrorMessage = "There are too many characters in this field.")]
         public string GroupName { get; set; }
+       
     }
 }
