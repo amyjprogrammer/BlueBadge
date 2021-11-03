@@ -17,6 +17,5 @@ namespace BlueBadge.Models
         [MaxLength(1000)]
         public string PollQuestion { get; set; }
 
-        public string UserFullName { get; set; }
     }
 }
