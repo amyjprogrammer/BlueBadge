@@ -28,5 +28,6 @@ namespace BlueBadge.Models
         public DateTimeOffset? ModifiedUtc { get; set; }
 
         public virtual List<PollChoice> Choices { get; set; } = new List<PollChoice>();
+
     }
 }
