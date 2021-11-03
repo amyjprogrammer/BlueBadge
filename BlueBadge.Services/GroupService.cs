@@ -1,4 +1,5 @@
 ﻿using BlueBadge.Data;
+using BlueBadge.Models;
 using BlueBadge.Models.Group.Models;
 using System;
 using System.Collections.Generic;
@@ -70,12 +71,12 @@ namespace BlueBadge.Services
 
                 foreach (var email in entity.Emails)
                 {
-                    group.Emails.Add(new Email { EmailId = email.EmailId, EmailAddress = email.EmailAddress});
+                    group.Emails.Add(new EmailListItem { EmailId = email.EmailId, EmailAddress = email.EmailAddress});
                 }
 
                 foreach (var question in entity.Questions)
                 {
-                    group.Questions.Add(new Question { Title = question.Title, PollQuestion = question.PollQuestion, CreatedUtc = question.CreatedUtc, QuestionId = question.QuestionId });
+                    group.Questions.Add(new QuestionListItem { Title = question.Title, PollQuestion = question.PollQuestion, CreatedUtc = question.CreatedUtc, QuestionId = question.QuestionId });
                 }
                 return group;
             }

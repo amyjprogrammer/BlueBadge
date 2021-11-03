@@ -16,8 +16,8 @@ namespace BlueBadge.Models.Group.Models
         [Display(Name ="Group Name")]
         public string GroupName { get; set; }
 
-        public List<Question> Questions = new List<Question>();
+        public List<QuestionListItem> Questions = new List<QuestionListItem>();
 
-        public List<Email> Emails = new List<Email>();
+        public List<EmailListItem> Emails = new List<EmailListItem>();
     }
 }

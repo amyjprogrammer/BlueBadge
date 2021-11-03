@@ -65,6 +65,7 @@ namespace BlueBadge.Services
                     {
                         PollId = entity.PollId,
                         Choice = entity.Choice,
+                        QuestionId = entity.QuestionId
                     };
             }
         }
