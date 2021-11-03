@@ -17,6 +17,7 @@ namespace BlueBadge.Data
         public int QuestionId { get; set; }
         public virtual Question Question { get; set; } 
         public string Choice { get; set; }
+        
     }
 }
 
