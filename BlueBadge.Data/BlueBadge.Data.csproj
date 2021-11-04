@@ -123,6 +123,14 @@
     <Compile Include="Migrations\202111022127570_FullName for User.Designer.cs">
       <DependentUpon>202111022127570_FullName for User.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111040135199_response.cs" />
+    <Compile Include="Migrations\202111040135199_response.Designer.cs">
+      <DependentUpon>202111040135199_response.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111040602243_change.cs" />
+    <Compile Include="Migrations\202111040602243_change.Designer.cs">
+      <DependentUpon>202111040602243_change.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PollChoice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -160,6 +168,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111022127570_FullName for User.resx">
       <DependentUpon>202111022127570_FullName for User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111040135199_response.resx">
+      <DependentUpon>202111040135199_response.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111040602243_change.resx">
+      <DependentUpon>202111040602243_change.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,6 +10,7 @@ namespace BlueBadge.Data
 {
     public class Response
     {
+        private int _selected = 1;
         [Key]
         public int ResponseId { get; set; }
 
@@ -17,5 +18,8 @@ namespace BlueBadge.Data
         public int PollId { get; set; }
         public virtual PollChoice PollChoice { get; set; }
 
+        public virtual List<PollChoice> Choice { get; set; } = new List<PollChoice>();
+
+        public int Selected { get { return _selected; } set { _selected = value; } }
     }
 }
