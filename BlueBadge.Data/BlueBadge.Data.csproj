@@ -84,12 +84,83 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Email.cs" />
+    <Compile Include="Group.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202110260103597_InitialCreate.cs" />
+    <Compile Include="Migrations\202110260103597_InitialCreate.Designer.cs">
+      <DependentUpon>202110260103597_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110260200390_initial.cs" />
+    <Compile Include="Migrations\202110260200390_initial.Designer.cs">
+      <DependentUpon>202110260200390_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110261853261_PollChoice.cs" />
+    <Compile Include="Migrations\202110261853261_PollChoice.Designer.cs">
+      <DependentUpon>202110261853261_PollChoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110271853204_servicepollchoice.cs" />
+    <Compile Include="Migrations\202110271853204_servicepollchoice.Designer.cs">
+      <DependentUpon>202110271853204_servicepollchoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110272013525_added some stuff.cs" />
+    <Compile Include="Migrations\202110272013525_added some stuff.Designer.cs">
+      <DependentUpon>202110272013525_added some stuff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110280338178_PollChoice1.cs" />
+    <Compile Include="Migrations\202110280338178_PollChoice1.Designer.cs">
+      <DependentUpon>202110280338178_PollChoice1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110281900114_Group.cs" />
+    <Compile Include="Migrations\202110281900114_Group.Designer.cs">
+      <DependentUpon>202110281900114_Group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110282023254_Email.cs" />
+    <Compile Include="Migrations\202110282023254_Email.Designer.cs">
+      <DependentUpon>202110282023254_Email.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111022127570_FullName for User.cs" />
+    <Compile Include="Migrations\202111022127570_FullName for User.Designer.cs">
+      <DependentUpon>202111022127570_FullName for User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PollChoice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Question.cs" />
+    <Compile Include="Response.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202110260103597_InitialCreate.resx">
+      <DependentUpon>202110260103597_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110260200390_initial.resx">
+      <DependentUpon>202110260200390_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110261853261_PollChoice.resx">
+      <DependentUpon>202110261853261_PollChoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110271853204_servicepollchoice.resx">
+      <DependentUpon>202110271853204_servicepollchoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110272013525_added some stuff.resx">
+      <DependentUpon>202110272013525_added some stuff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110280338178_PollChoice1.resx">
+      <DependentUpon>202110280338178_PollChoice1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110281900114_Group.resx">
+      <DependentUpon>202110281900114_Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110282023254_Email.resx">
+      <DependentUpon>202110282023254_Email.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111022127570_FullName for User.resx">
+      <DependentUpon>202111022127570_FullName for User.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
@@ -19,6 +20,13 @@ namespace BlueBadge.Data
             // Add custom user claims here
             return userIdentity;
         }
+        [Required]
+        public string FirstName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
+
+        public string FullName { get { return $"{FirstName} {LastName}"; } }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -33,10 +41,11 @@ namespace BlueBadge.Data
             return new ApplicationDbContext();
         }
 
-        /*public DbSet<Email> Emails { get; set; }
+        public DbSet<Email> Emails { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<PollChoice> PollChoices { get; set; }
-        public DbSet<Response> Responses { get; set; }*/
+        public DbSet<Response> Responses { get; set; }
+        public DbSet<Group> Groups { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
