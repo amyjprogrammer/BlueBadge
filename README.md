@@ -15,6 +15,7 @@ _____________________________________________________
  The app has five tables with full CRUD capabilities.
 
 ______________________________________________________________________________________________________________
+
 # Eleven Fifty Academy- Blue Badge Final Project
 
 _____________________________________________________
@@ -41,7 +42,6 @@ This project utilizes and shows skills with :
 
 ______________________________________________________________________________________________________________
 
-The Repository currently holds the setup for a Voting App that would allow users to set up questions and choices along with emailing them to clients or friends. The app has five tables with full CRUD capabilities.  
 
 
 
