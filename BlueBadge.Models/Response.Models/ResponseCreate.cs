@@ -11,9 +11,9 @@ namespace BlueBadge.Models
     public class ResponseCreate
     {
         [Required]
-        public int QuestionId { get; set; }
-
-        [Required]
         public int PollId { get; set; }
+
+        /*[Required]
+        public int Selected { get; set; }*/
     }
 }

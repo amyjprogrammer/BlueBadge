@@ -73,6 +73,8 @@
     <Compile Include="Question.Models\QuestionListItem.cs" />
     <Compile Include="Response.Models\ResponseCreate.cs" />
     <Compile Include="Response.Models\ResponseDetail.cs" />
+    <Compile Include="Response.Models\ResponseEdit.cs" />
+    <Compile Include="Response.Models\ResponseListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

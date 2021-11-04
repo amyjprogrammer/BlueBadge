@@ -1,0 +1,18 @@
+namespace BlueBadge.Data.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class response : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.Response", "Count", c => c.Int(nullable: false));
+        }
+        
+        public override void Down()
+        {
+            DropColumn("dbo.Response", "Count");
+        }
+    }
+}

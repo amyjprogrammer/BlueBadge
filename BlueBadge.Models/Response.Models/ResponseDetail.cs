@@ -12,8 +12,16 @@ namespace BlueBadge.Models
     {
         public int ResponseId { get; set; }
 
+        /*[ForeignKey(nameof(Question))]
+        public int QuestionId { get; set; }
+        public virtual Question Question { get; set; }*/
+
         [ForeignKey(nameof(PollChoice))]
         public int PollId { get; set; }
         public virtual PollChoice PollChoice { get; set; }
+
+        public int Selected { get; set; }
+        
+        public virtual List<PollChoiceListItem> Choice { get; set; } = new List<PollChoiceListItem>();
     }
 }
