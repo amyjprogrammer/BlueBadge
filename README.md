@@ -1,4 +1,4 @@
-# Off the Pool
+# Off the Poll
 _____________________________________________________
 
 Are you an entrepreneur trying to find out just what consumers are after? Maybe you are a college student in need of creating a basic survey to collect data for a school project. Even if its just to vote which friends home will host Super Bowl Sunday, we have the app for you. Off the pool is the perfect application if you are in need of collecting data. Efficiently create a poll for any of your data collecting needs.
